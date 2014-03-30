@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Looper;
 import android.util.Log;
@@ -27,7 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -36,6 +34,9 @@ import javax.annotation.Nullable;
  */
 public class IO
 {
+
+    public static final String NETWORK_NOT_FOUND = "Network not found!";
+
     private IO()
     {
     }
@@ -53,7 +54,7 @@ public class IO
      * Returns the Name of the Network Connection eg. WIFI, MOBILE.
      *
      * @param _context
-     * @return the name of the network or "Network not found!"
+     * @return the name of the network or @link NETWORK_NOT_FOUND
      */
     public static String getNetworkName(@Nonnull final Context _context)
     {
@@ -68,7 +69,7 @@ public class IO
         }
         else
         {
-            builder.append("Network not found!");
+            builder.append(NETWORK_NOT_FOUND);
         }
 
         return builder.toString();
@@ -87,9 +88,6 @@ public class IO
     {
         final File root = context.getFilesDir();
         final File neededFile = new File(root, filename);
-
-        Log.d(LOG_TAG, "checking File exist " + neededFile.getAbsolutePath());
-
         return neededFile.exists();
     }
 
@@ -229,7 +227,7 @@ public class IO
      * @throws IOException
      * @see {@link #asString(java.io.InputStream, int)}
      */
-    public static StringBuilder asString(final InputStream inputStream) throws IOException
+    public static <T> StringBuilder asString(final InputStream inputStream) throws IOException
     {
         return asString(inputStream, DEFAULT_BUFFER_SIZE);
     }
@@ -373,14 +371,24 @@ public class IO
     /**
      * Throws a Runtime Exception if you call this from main thread
      *
-     * @throws java.lang.IllegalAccessException
+     * @throws org.andhelp.io.IllegalThreadAccessExpection
      */
-    public static void checkMainThread() throws IllegalAccessException
+    public static void throwIfMainThread() throws IllegalThreadAccessExpection
     {
         if (Looper.myLooper() != null && Looper.myLooper() == Looper.getMainLooper())
         {
-            throw new IllegalAccessException("You´re trying to run something on the main thread which is not allowed there.");
+            throw new IllegalThreadAccessExpection("Access on Main Thread not allowed.");
         }
+
+    }
+
+    /**
+     * Returns true when called from Main Thread
+     * @return
+     */
+    public static boolean isMainThread()
+    {
+        return Looper.myLooper() != null && Looper.myLooper() == Looper.getMainLooper();
 
     }
 }

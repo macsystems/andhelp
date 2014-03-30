@@ -12,7 +12,7 @@ import java.util.Map;
 
 
 /**
- * Helper Class for Generic boilerplate code
+ * Helper Class for Generic/Collections boilerplate code
  */
 public final class Collections
 {

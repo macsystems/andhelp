@@ -7,7 +7,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Use to document that calling thread must be the Main/UI Thread.
+ * Use to document that accessing thread must be the Main/UI Thread.
  */
 @Documented
 @Target({ElementType.METHOD, ElementType.FIELD, ElementType.LOCAL_VARIABLE, ElementType.PARAMETER, ElementType.CONSTRUCTOR})
