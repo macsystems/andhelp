@@ -1,4 +1,4 @@
-package org.andhelp.generics;
+package org.andhelp.collection;
 
 
 import android.support.v4.util.ArrayMap;
