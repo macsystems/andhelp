@@ -10,8 +10,13 @@ buildscript {
 apply plugin: 'android-library'
 
 dependencies {
-    compile 'com.android.support:support-v4:19.1.0'
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
 
+    compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.google.code.findbugs:jsr305:2.0.2'
 }
 
 

@@ -13,13 +13,11 @@ import java.util.Map;
 
 /**
  * Helper Class for Generic boilerplate code
- *
- * @author Jens Hohl
  */
-public final class Generics
+public final class Collections
 {
 
-    private Generics()
+    private Collections()
     {
     }
 
