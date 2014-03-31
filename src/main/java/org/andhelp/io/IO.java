@@ -49,6 +49,8 @@ public class IO
 
     public static final int DEFAULT_BUFFER_SIZE = 1024;
 
+    public static final int DEFAULT_STRING_BUFFER_SIZE = 256;
+
 
     /**
      * Returns the Name of the Network Connection eg. WIFI, MOBILE.
