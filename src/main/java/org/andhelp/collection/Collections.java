@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 
-
 /**
  * Helper Class for Generic/Collections boilerplate code
  */
@@ -51,7 +50,7 @@ public final class Collections
     }
 
 
-    public static <K, V> Map<K, V> createArrayMap( final int initialCapacity)
+    public static <K, V> Map<K, V> createArrayMap(final int initialCapacity)
     {
         return new ArrayMap<K, V>(initialCapacity);
     }
@@ -63,7 +62,7 @@ public final class Collections
     }
 
 
-    public static <K, V> Map<K, V> createMap( final int initialCapacity)
+    public static <K, V> Map<K, V> createMap(final int initialCapacity)
     {
         return new HashMap<K, V>(initialCapacity);
     }

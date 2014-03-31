@@ -32,7 +32,7 @@ import javax.annotation.Nullable;
 /**
  * Utility Class for IO related tasks.
  */
-public class IO
+public final class IO
 {
 
     public static final String NETWORK_NOT_FOUND = "Network not found!";
@@ -386,6 +386,7 @@ public class IO
 
     /**
      * Returns true when called from Main Thread
+     *
      * @return
      */
     public static boolean isMainThread()
