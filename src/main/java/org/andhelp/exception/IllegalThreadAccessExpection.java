@@ -1,4 +1,4 @@
-package org.andhelp.io;
+package org.andhelp.exception;
 
 /**
  * Thrown when an thread tries to access an resource which should not be accessed by an type of thread

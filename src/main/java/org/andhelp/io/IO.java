@@ -12,6 +12,8 @@ import android.net.Uri;
 import android.os.Looper;
 import android.util.Log;
 
+import org.andhelp.exception.IllegalThreadAccessExpection;
+
 import java.io.BufferedReader;
 import java.io.Closeable;
 import java.io.File;
@@ -373,7 +375,8 @@ public final class IO
     /**
      * Throws a Runtime Exception if you call this from main thread
      *
-     * @throws org.andhelp.io.IllegalThreadAccessExpection
+     * @throws org.andhelp.exception.IllegalThreadAccessExpection
+     * @see org.andhelp.ui.UI#throwIfNotMainThread()
      */
     public static void throwIfMainThread() throws IllegalThreadAccessExpection
     {
