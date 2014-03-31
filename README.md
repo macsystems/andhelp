@@ -3,7 +3,9 @@ andhelp
 
 The Goal of AndHelp is to reduce the amount of those *Util classes while you're developing your android App. 
 
+![Logo](android_tool.png)
 
+Most classes are designed to be best used as static import
 
 IO related:
 -----------
