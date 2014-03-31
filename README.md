@@ -20,8 +20,8 @@ Database related:
 
 org.andhelp.db.*
 
-Generics related:
+Collection related:
 -----------------
 
-org.andhelp.generics.*
+org.andhelp.collection.*
 
