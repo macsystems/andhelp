@@ -32,14 +32,16 @@ public class Logger
         return allowLogging;
     }
 
-
+    /**
+     * Enable any further log statements.
+     */
     public static void enableLogging()
     {
         allowLogging = true;
     }
 
     /**
-     * Calling this will forbit
+     * Disabled any further log statements.
      */
     public static void disableLogging()
     {
