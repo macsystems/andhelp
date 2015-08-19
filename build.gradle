@@ -3,26 +3,25 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.9.+'
+        classpath 'com.android.tools.build:gradle:1.2.3'
     }
 }
 
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 
 dependencies {
     repositories {
         mavenCentral()
         mavenLocal()
     }
-
-    compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.android.support:support-v4:22.2.1'
     compile 'com.google.code.findbugs:jsr305:2.0.3'
 }
 
 
 android {
     compileSdkVersion 19
-    buildToolsVersion = "19.0.3"
+    buildToolsVersion = "19.1"
 
     dexOptions {
         incremental true
@@ -36,8 +35,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_6
+        targetCompatibility JavaVersion.VERSION_1_6
     }
 
 
