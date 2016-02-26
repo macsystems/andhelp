@@ -13,7 +13,7 @@ public class AndHelp
      */
     public static String getLicenseText() {
         return "This application uses the AndHelp library.\n\n" +
-                "Copyright 2014 - Jens Hohl \n" +
+                "Copyright 2014 - 2016 - Jens Hohl \n" +
                 "\n" +
                 "Licensed under the Apache License, Version 2.0 (the \"License\");\n" +
                 "you may not use this file except in compliance with the License.\n" +

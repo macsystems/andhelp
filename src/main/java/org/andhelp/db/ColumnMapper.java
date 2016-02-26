@@ -1,41 +1,41 @@
 package org.andhelp.db;
 
 import android.content.ContentValues;
+import android.support.annotation.IntDef;
+import android.support.annotation.NonNull;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
 
 /**
  * Maps an Column to an other column. Useful when you need to map virtual table names in an ContentProvider.
  */
-public class ColumnMapper
-{
-    public static enum Type
-    {
-        BOOLEAN, BYTE, BYTEARRAY, DOUBLE, FLOAT, INTEGER, LONG, SHORT, STRING
-    }
+public class ColumnMapper {
 
+    public static final int BOOLEAN = 0;
+    public static final int BYTE = 1;
+    public static final int BYTEARRAY = 2;
+    public static final int DOUBLE = 3;
+    public static final int FLOAT = 4;
+    public static final int INTEGER = 5;
+    public static final int LONG = 6;
+    public static final int SHORT = 7;
+    public static final int STRING = 8;
 
     private final String name;
+    private final int type;
 
-    private final Type type;
-
-    public ColumnMapper(final String columnName, final Type columnType)
-    {
-        if (columnName == null)
-        {
+    public ColumnMapper(@NonNull final String columnName, @Type final int columnType) {
+        if (columnName == null) {
             throw new IllegalArgumentException("Column name can't be null");
-        }
-        if (columnType == null)
-        {
-            throw new IllegalArgumentException("Type can't be null.");
         }
         name = columnName;
         type = columnType;
     }
 
-    public void map(final String srcColumn, final ContentValues src, final ContentValues dst)
-    {
-        switch (type)
-        {
+    public void map(@NonNull final String srcColumn, @NonNull final ContentValues src, @NonNull final ContentValues dst) {
+        switch (type) {
             case BOOLEAN:
                 dst.put(name, src.getAsBoolean(srcColumn));
                 break;
@@ -67,5 +67,10 @@ public class ColumnMapper
                 throw new IllegalArgumentException("Type not supported:" + type + " for column:" + srcColumn);
         }
 
+    }
+
+    @IntDef(flag = false, value = {BOOLEAN, BYTE, BYTEARRAY, DOUBLE, FLOAT, INTEGER, LONG, SHORT, STRING})
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface Type {
     }
 }

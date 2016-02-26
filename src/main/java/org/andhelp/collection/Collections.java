@@ -13,57 +13,47 @@ import java.util.Map;
 /**
  * Helper Class for Generic/Collections boilerplate code
  */
-public final class Collections
-{
+public final class Collections {
 
-    private Collections()
-    {
+    private Collections() {
     }
 
 
-    public static <E> SparseArray<E> createSparseArray()
-    {
+    public static <E> SparseArray<E> createSparseArray() {
         return new SparseArray<E>();
     }
 
-    public static <E> SparseArray<E> createSparseArray(final int initialCapacity)
-    {
+    public static <E> SparseArray<E> createSparseArray(final int initialCapacity) {
         return new SparseArray<E>(initialCapacity);
     }
 
 
-    public static <T> List<T> createList()
-    {
+    public static <T> List<T> createList() {
         return new ArrayList<T>();
     }
 
 
-    public static <T> List<T> createList(final int initialCapacity)
-    {
+    public static <T> List<T> createList(final int initialCapacity) {
         return new ArrayList<T>(initialCapacity);
     }
 
 
-    public static <K, V> Map<K, V> createArrayMap()
-    {
+    public static <K, V> Map<K, V> createArrayMap() {
         return new ArrayMap<K, V>();
     }
 
 
-    public static <K, V> Map<K, V> createArrayMap(final int initialCapacity)
-    {
+    public static <K, V> Map<K, V> createArrayMap(final int initialCapacity) {
         return new ArrayMap<K, V>(initialCapacity);
     }
 
 
-    public static <K, V> Map<K, V> createMap()
-    {
+    public static <K, V> Map<K, V> createMap() {
         return new HashMap<K, V>();
     }
 
 
-    public static <K, V> Map<K, V> createMap(final int initialCapacity)
-    {
+    public static <K, V> Map<K, V> createMap(final int initialCapacity) {
         return new HashMap<K, V>(initialCapacity);
     }
 
