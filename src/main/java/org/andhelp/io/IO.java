@@ -1,5 +1,6 @@
 package org.andhelp.io;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
@@ -10,6 +11,7 @@ import android.database.sqlite.SQLiteStatement;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Looper;
+import android.support.annotation.RequiresPermission;
 import android.util.Log;
 
 import org.andhelp.exception.IllegalThreadAccessExpection;
@@ -71,6 +73,7 @@ public final class IO {
      * @param _context
      * @return the name of the network or @link NETWORK_NOT_FOUND
      */
+    @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
     public static String getNetworkName(@Nonnull final Context _context) {
         final ConnectivityManager systemService = (ConnectivityManager) _context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
